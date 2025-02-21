@@ -17,6 +17,7 @@ env:
   CARGO_NET_RETRY: 10
   CFLAGS_x86_64_fortanix_unknown_sgx: "-isystem/usr/include/x86_64-linux-gnu -mlvi-hardening -mllvm -x86-experimental-lvi-inline-asm-hardening"
   CC_x86_64_fortanix_unknown_sgx: clang-11
+  SKIP_PCS_API_KEY_NEEDED_TEST: ${{ github.actor == 'dependabot[bot]' }}
 
 jobs:
   test:
