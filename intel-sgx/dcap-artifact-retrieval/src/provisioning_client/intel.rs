@@ -499,12 +499,17 @@ mod tests {
         api_key
     }
 
+    fn skip_v3_test() -> bool {
+        &std::env::var("SKIP_PCS_API_KEY_NEEDED_TEST").unwrap_or_default() == "true"
+    }
+
     #[test]
     pub fn pcks() {
         for api_version in [PcsVersion::V3, PcsVersion::V4] {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -532,6 +537,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -585,6 +591,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -617,6 +624,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -701,6 +709,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -725,6 +734,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -772,6 +782,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -788,6 +799,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -826,6 +838,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
@@ -841,6 +854,7 @@ mod tests {
             let mut intel_builder = IntelProvisioningClientBuilder::new(api_version)
                 .set_retry_timeout(TIME_RETRY_TIMEOUT);
             if api_version == PcsVersion::V3 {
+                if skip_v3_test() { continue }
                 intel_builder.set_api_key(pcs_api_key());
             }
             let client = intel_builder.build(reqwest_client());
